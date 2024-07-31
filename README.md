@@ -21,17 +21,17 @@ Follow these steps to deploy this project on your AWS account:
 2. **Create the Upload Lambda Function**: Create a Lambda function named `FunctionForUploads` with the following configuration:
    - Runtime: Python 3.9
    - Execution Role: An IAM role with permissions to write to the S3 bucket created in step 1.
-   - Code: Use the provided `UploadFunction` Python code.
+   - Code: Use the provided `FunctionForUploads` Python code.
 
-3. **Create the Download Lambda Function**: Create a Lambda function named `DownloadFunction` with the following configuration:
+3. **Create the Download Lambda Function**: Create a Lambda function named `FunctionForDownloads` with the following configuration:
    - Runtime: Python 3.9
    - Execution Role: An IAM role with permissions to read from the S3 bucket created in step 1.
-   - Code: Use the provided `DownloadFunction` Python code.
+   - Code: Use the provided `FunctionForDownloads` Python code.
 
-4. **Create an API Gateway**: Create an API Gateway named `my-file-sharing-api-amc` with the following resources and methods:
+4. **Create an API Gateway**: Create an API Gateway named `my-file-api` with the following resources and methods:
    - Resource: `/files`
-     - Method: `POST` (integrated with the `UploadFunction` Lambda)
-     - Method: `GET` (integrated with the `DownloadFunction` Lambda)
+     - Method: `POST` (integrated with the `FunctionForUploads` Lambda)
+     - Method: `GET` (integrated with the `FunctionForDownloads` Lambda)
 
 5. **Configure the GET Method**:
    - In the API Gateway, navigate to the `GET` method for the `/files` resource.
