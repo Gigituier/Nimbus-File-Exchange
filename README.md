@@ -64,21 +64,16 @@ Follow these steps to deploy this project on your AWS account:
 
 8. **Testing**:
    - **Upload a File**:
-     - Using Postman or another HTTP client, send a `POST` request to `https://<api-id>.execute-api.<region>.amazonaws.com/dev/files?fileName=test.txt`.
-     - Set the request body to raw and content type to `text/plain`.
-     - Enter the file content (e.g., `Hello World!`) and send the request.
-     - Alternatively, you can use the `curl` utility:
+     - You can use the `curl` utility:
        ```
-       curl --location 'https://<api-id>.execute-api.<region>.amazonaws.com/dev/files?fileName=test.txt' \
+       curl --location 'https://<API-ID>.execute-api.<REGION>.amazonaws.com/dev/files?fileName=<file-name>.txt \
        --header 'Content-Type: text/plain' \
-       --data 'Hello World from A Monk in Cloud!'
+       --data 'text here'
        ```
    - **Download a File**:
-     - Using Postman or another HTTP client, send a `GET` request to `https://<api-id>.execute-api.<region>.amazonaws.com/dev/files?fileName=test.txt`.
-     - Verify that the file content is returned correctly.
-     - Alternatively, you can use the `curl` utility:
+     - You can use the `curl` utility:
        ```
-       curl --location 'https://<api-id>.execute-api.<region>.amazonaws.com/dev/files?fileName=test.txt'
+       curl --location 'https://<API-ID>.execute-api.<REGION>.amazonaws.com/dev/files?fileName=<file-name>.txt'
        ```
 
 Congratulations! You have successfully deployed the Nimbus File Exchange on your AWS account.
